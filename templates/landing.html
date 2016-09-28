@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Blueprint || {% block title %} put title here {% endblock %}</title>
+
+    <!-- CSS/Custom Styling -->
+    <link href="/static/css/styles.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+</head>
+
+<body>
+
+<style>
+
+body {
+    background-image: url("static/img/blue_watercolor.jpg");
+    font-family: 'Inconsolata', monospace;
+}
+
+.jumbotron {
+    background-color: #000000;
+}
+
+.jumbotron-subheader {
+    color: #bfbfbf;
+}
+
+h1 {
+    color: #cccccc;
+}
+
+</style>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#"></a>
+        <nav class="nav navbar-nav pull-xs-right" id="login-tog">
+    </nav>
+</nav>
+
+<!-- JUMBOTRON -->
+<div class="authentication">
+    <div class="jumbotron">
+        <div class="jumbotron-header">
+            <center><h1 style="color: #cccccc">Blueprint</h1></center>
+        </div>
+        <center><div class="jumbotron-subheader">
+            <h4>Create your own blueprint!</h4>
+        </div></center>
+            <br>
+                <form action='/login' method='POST'>
+                    <center><div class="form-group">
+                        <label class="sr-only" for="text-input">Email</label>
+                        <input type="email" name="inputEmail" style="width: 400px" class="form-control" id="inputEmail" placeholder="Email" required>
+                    </div></center>
+                    <center><div class="form-group">
+                        <label class="sr-only" for="text-input">Password</label>
+                        <input type="password" name="inputPassword" style="width: 400px" class="form-control" id="inputPassword" placeholder="**********" required>
+                    </div></center>
+                    <center><div class="form-group">
+                        <button type="submit" style="width: 200px" class="btn btn-outline-secondary" id="login-button">Sign In</button>
+                    </div></center>
+                </form>
+
+<!-- REGISTER MODAL TRIGGER -->
+ 
+<center><button type="button" style="width: 200px" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Register</button></center>
+</div><!-- /. Jumbotron -->
+</div><!-- /. authentication -->
+
+<!-- REGISTER MODAL -->
+
+<div class="authentication">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Register Here!</h4>
+          </div>
+          <div class="modal-body">
+            <form action="/register" method='post'>
+                <label for="email"> Email address </label>
+                    <input for="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" required autofocus>
+                    <br>
+                <label for="password"> Password </label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="************" required>
+                    <br>
+                <label for="username"> Username</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="falcon343" required>
+                <br>     
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="auth btn btn-default" value="Register">
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+  <!-- Footer -->
+<br>
+<br>
+<footer class="footer">
+    <div class="container">
+      <p class="footer-copyright">Blueprint &copy; 2016.</p>
+    </div>
+</footer>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

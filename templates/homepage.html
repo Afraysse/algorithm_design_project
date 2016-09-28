@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+
+body {
+  font-family: 'Insolata', monospace;
+}
+
+.jumbotron {
+  background-color: #000000;
+}
+
+#col-title {
+  font-family: 'Insolata', monospace;
+}
+
+.panel-body {
+    padding: 15px;
+    padding-left: 2px;
+}
+
+.panel-transparent {
+  opacity: 0.5;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+
+
+
+</style>
+
+
+<div class="container">
+
+<!-- Navigation to galleries and walls avalible to all users. -->
+
+<div class='row'>
+
+    <div class='col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 text-center'>  
+        <a href="/galleries"> 
+        <center><img src="/static/img/glyphicons-94-crop.png" class="img-responsive"></center>
+        <h4>Start New Gallery</h4>
+        </a>
+        <i><p>Start a new collection.</p></i>
+    </div>
+
+<!-- Navigation to galleries and walls avalible to all users. -->
+
+    <div class='col-sm-5 col-md-4 text-center'>
+        <a href="/walls"> 
+        <center><img src="/static/img/glyphicons-364-cloud-upload.png" class="img-responsive"></center>
+        <h4>Upload Material</h4>
+        </a> 
+        <i><p>Upload new material. </p></i>
+    </div>
+  </div>  
+</div>
+<br>
+<br>
+
+<div class='container'>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2 text-center">
+      <a href="#" class="thumbnail">
+        <img src="/static/img/vintage_lady.jpg" alt="Image Not Loading">
+      </a>
+    </div>
+    <div class="col-sm-6 col-md-4 text-center">
+      <a href="#" class="thumbnail">
+        <img src="/static/img/old_car.jpg" alt="Image Not Loading">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
+</html>
